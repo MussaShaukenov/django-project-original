@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://images.pexels.com/photos/3924054/pexels-photo-3924054.png?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block title %}
+             <title> COVID-19 Forecast in KZ </title>
+        {% endblock %}
+
+</head>
+
+    {% include 'inc/_nav.html' %}
+
+    {% include 'inc/_statistics.html' %}
+
+
+  <div id="con3">
+        <div class="container-fluid">
+          <h2>Articles</h2>
+        </div>
+      </div>
+
+
+
+  <div class="con4">
+        <div class="container-fluid">
+          <div class="row">
+
+                {% block sidebar %} SIDEBAR {% endblock %}
+
+                {% block content %} CONTENT {% endblock %}
+
+             </div>
+        </div>
+  </div>
+
+
+{% include 'inc/_footer.html' %}
+

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ articles_item.title }} :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+         {% include 'inc/_sidebar.html'%}
+{% endblock %}
+
+{% block content %}
+        <div class="card mb-3">
+            <div class="card-header">
+    Category: <a href="{{ articles_item.category.get_absolute_url }}"> {{ articles_item.category }} </a>
+            </div>
+
+    <div class="card-body">
+              {% if articles_item.photo %}
+              <img src="{{ articles_item.photo.url }}" width="300" class="float-left mr-3">
+                  {% else %}
+                  <img src="http://serpstar.org/wp-content/uploads/2013/10/article-marketing-for-backlinks.jpg"
+                       alt="" class="float-left mr-3">
+              {% endif %}
+              <h5 class="card-title">{{ articles_item.title }}</h5>
+              <p class="card-text">{{ articles_item.content|linebreaks }}</p>
+
+    </div>
+        <div class="card-footer text-muted">
+            {{ articles_item.created_at|date:"Y-m-d H:i:s"  }}
+        </div>
+</div>
+{% endblock %}

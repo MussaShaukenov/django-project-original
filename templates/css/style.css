@@ -1,0 +1,123 @@
+.body {
+    background-color: #022c43;
+}
+
+#top-jumbotron {
+  margin-bottom: 0px;
+  width: 100%;
+  height: 250px;
+
+}
+.jumbotron{
+    margin-bottom: 0px;
+    background-image: url(https://star-storage.ro/wp-content/uploads/sites/12/2020/03/Corona_virus_visual.jpg);
+    background-size: contain;
+
+}
+.header {
+    color: rgb(242, 254, 24)
+}
+#top-navbar {
+  margin-bottom: 0px;
+  font-size: 1.5em;
+}
+#a-home {
+  font-size: 1.2em;
+}
+.navbar {
+    padding: 5px;
+}
+.navbar-brand {
+  font-size: 1.6em;
+}
+.con1, #con3, #con5, #con7 {
+    height: 100px;
+    background-color: rgba(233, 76, 233, 0.158);
+    padding: 10px;
+    color: rgb(242, 254, 24);
+    text-align: center;
+    font-size: 2em;
+}
+#safety-first-image {
+  height: 200px;
+  width: 200px;
+}
+.item {
+  width: auto;
+  height: auto;
+}
+h3 {
+  text-align: center;
+  padding: 5px;
+}
+.con1:hover, #con3:hover, #con5:hover, #con7:hover {
+    background: #db02b08f;
+    margin: 0px;
+    transition: all .3s;
+}
+.con2 .col-sm-6{
+    background-color: rgba(255, 0, 0, 0.158);
+    color: coral;
+    text-align: center;
+    border: 1px solid black;
+}
+.con2:hover {
+    margin: 15px;
+    transition: all .2s;
+}
+.con4 .col-sm-8 {
+    background-color: rgba(255, 0, 0, 0.158);
+    color: coral;
+    text-align: center;
+}
+.con4:hover {
+    margin: 15px;
+    transition: all .2s;
+}
+.con6 .col-sm-6{
+    background-color: rgba(255, 0, 0, 0.158);
+    color: coral;
+    border: 1px solid black;
+}
+.con6 .col-sm-12 {
+    background-color: rgba(255, 0, 0, 0.158);
+    color: coral;
+    border: 1px solid black;
+}
+.con8 button {
+    width: 100%;
+    background-color: rgba(100, 148, 237, 0.685);
+}
+.con8 #ans1, #ans2, #ans3, #ans4, #ans5, #ans6, #ans7, #ans8{
+    background-color: rgba(169, 169, 169, 0.425);
+    padding: 20px;
+    color: whitesmoke;
+    font-size: 1.2em;
+    text-align: center;
+}
+footer .container-fluid {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.432);
+}
+footer .container {
+    padding: 30px;
+    color: greenyellow;
+    font-size: 25px;
+}
+.logo :hover {
+    background: rgb(218, 218, 218);
+    transition: all .4s;
+}
+.l {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+  }
+.c {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    margin: 5px;
+}
