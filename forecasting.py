@@ -165,4 +165,3 @@ def expected_value():
     return a_current
 
 
-print('forecasted: ', expected_value(), '\n')
