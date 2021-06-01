@@ -5,9 +5,7 @@
                   <ul class="nav nav-pills flex-column" id="row-4">
                       {% get_categories as categories %}
                       {% for item in categories %}
-{#                    <li class="active"><a data-toggle="tab" href="">Category 1</a></li>       #}
                     <li><a data-toggle="tab" href="{% url 'category' item.pk %}"> {{ item.title }} </a></li>
-{#                    <li><a data-toggle="tab" href="#art3">Category 3</a></li>#}
                       {% endfor %}
                   </ul>
                 </div>

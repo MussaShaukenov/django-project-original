@@ -7,25 +7,78 @@
          {% include 'inc/_sidebar.html'%}
 {% endblock %}
 
+{# {% block content %}#}
+{#                 <div class="col-sm-8">#}
+{#                <div class="tab-content">#}
+{#                    <p style="color: coral; font-size: 1.4em;">#}
+{#                        Category: <a href="{{ item.category.get_absolute_url }}"> {{ item.category }} news </a>#}
+{#                    </p>#}
+{##}
+{#                  <div id="art1" class="tab-pane fade in active">#}
+{#                    <br>#}
+{#                      {% if item.photo %}#}
+{#                    <img src="{{ item.photo.url }}" width="500" alt="">#}
+{#                      {% else %}#}
+{#                      <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/BB8F/production/_118251084_neymarcity.jpg" alt="">#}
+{#                      {% endif %}#}
+{#                    <h3> {{ item.title }} </h3>#}
+{#                    <p> {{ item.content|linebreaks }} </p>#}
+{#                    <a target="_blank" href="{{ item.get_absolute_url }}" class="btn btn-primary">Read more</a>#}
+{##}
+{#                   <div class="card-footer text-muted">#}
+{#           <p style="color: coral; font-size: 1em; padding: 10px;"> Published Time:  {{ item.created_at|date:"Y-m-d H:i"  }} </p>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </div>#}
+{#        {% endblock %}#}
+{##}
+
 {% block content %}
-        <div class="card mb-3">
-            <div class="card-header">
-    Category: <a href="{{ articles_item.category.get_absolute_url }}"> {{ articles_item.category }} </a>
-            </div>
+        <div class="media" style="padding: 25px;">
+            <div class="media-top">
 
-    <div class="card-body">
-              {% if articles_item.photo %}
-              <img src="{{ articles_item.photo.url }}" width="300" class="float-left mr-3">
-                  {% else %}
-                  <img src="http://serpstar.org/wp-content/uploads/2013/10/article-marketing-for-backlinks.jpg"
+                  <div style="font-size: 1.4em"><span style="color: yellow"> Category: </span> <a href="{{ articles_item.category.get_absolute_url }}" style="color: ghostwhite"> {{ articles_item.category }} </div>
+
+                    {% if articles_item.photo %}
+                 <img class="media-object" src="{{ articles_item.photo.url }}" width="600" alt="...">
+                    {% else %}
+                   <img src="http://serpstar.org/wp-content/uploads/2013/10/article-marketing-for-backlinks.jpg"
                        alt="" class="float-left mr-3">
-              {% endif %}
-              <h5 class="card-title">{{ articles_item.title }}</h5>
-              <p class="card-text">{{ articles_item.content|linebreaks }}</p>
-
-    </div>
-        <div class="card-footer text-muted">
-            {{ articles_item.created_at|date:"Y-m-d H:i:s"  }}
+                    {% endif %}
+                <br>
+                 </a>
+            </div>
+                <div class="media-body"  style="color: lightcoral; font-size: 1.2em ">
+                    <h3 class="media-left" style="color: whitesmoke">{{ articles_item.title }}</h3>
+                        <p class="media-middle" style="padding: 25px;">{{ articles_item.content|linebreaks }}</p>
+                </div>
+            <br>
+        <button class="btn btn-light" onclick="{% url 'home' %}">Go back</button>
         </div>
-</div>
 {% endblock %}
+
+
+{##}
+{#{% block content %}#}
+{#        <div class="card mb-3">#}
+{#            <div class="card-header">#}
+{#    Category: <a href="{{ articles_item.category.get_absolute_url }}"> {{ articles_item.category }} </a>#}
+{#            </div>#}
+{##}
+{#    <div class="card-body" style="color: ghostwhite">#}
+{#              {% if articles_item.photo %}#}
+{#              <img src="{{ articles_item.photo.url }}" width="300" class="float-left mr-3">#}
+{#                  {% else %}#}
+{#                  <img src="http://serpstar.org/wp-content/uploads/2013/10/article-marketing-for-backlinks.jpg"#}
+{#                       alt="" class="float-left mr-3">#}
+{#              {% endif %}#}
+{#              <h5 class="card-title">{{ articles_item.title }}</h5>#}
+{#              <p class="card-text">{{ articles_item.content|linebreaks }}</p>#}
+{##}
+{#    </div>#}
+{#        <div class="card-footer text-muted">#}
+{#            {{ articles_item.created_at|date:"Y-m-d H:i:s"  }}#}
+{#        </div>#}
+{#</div>#}
+{#{% endblock %}#}
