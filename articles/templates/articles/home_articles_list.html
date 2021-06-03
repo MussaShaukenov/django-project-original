@@ -4,34 +4,57 @@
     {{ title }} :: {{ block.super }}
 {% endblock %}
 
+<div class="con1">
+        <div class="container-fluid">
+            <h2>Statistics</h2>
+        </div>
+    </div>
+{% block stats %} {% endblock %}
+
+
 {% block sidebar %}
          {% include 'inc/_sidebar.html'%}
 {% endblock %}
 
-        {% block content %}
-            {% for item in articles %}
-                 <div class="col-sm-8">
-                <div class="tab-content">
-                    <p style="color: coral; font-size: 1.4em;">Category: <a href="{{ item.category.get_absolute_url }}" style="color: whitesmoke"> {{ item.category }} news </a> </p>
-                  <div id="art1" class="tab-pane fade in active">
-                    <br>
-                      {% if item.photo %}
-                    <img src="{{ item.photo.url }}" width="500" alt="">
-                      {% else %}
-                      <img src="https://ichef.bbc.co.uk/wwhp/624/cpsprodpb/BB8F/production/_118251084_neymarcity.jpg" alt="">
-                      {% endif %}
-                    <h3> {{ item.title }} </h3>
-                    <p> {{ item.content|linebreaks|truncatewords:30 }} </p>
-                    <a target="_blank" href="{{ item.get_absolute_url }}" class="btn btn-primary">Read more</a>
 
-                   <div class="card-footer text-muted">
-           <p style="color: coral; font-size: 1em; padding: 10px;"> Published Time:  {{ item.created_at|date:"Y-m-d H:i"  }} </p>
-                    </div>
-                  </div>
+{% block articles %}
+     <div class="col-8">
+    <div class="container mt-3">
+        {{ articles.count }}
+            <div class="row">
+            <div class="col-md-12">
+                 {% for item in articles %}
+            </div>
+                <div class="card mb-3" style="border: 2px solid red">
+                <div class="card-header">
+                <p>Category: <a href="{{ item.category.get_absolute_url }}"> {{ item.category }} </a> </p>
                 </div>
-              </div>
+                <div class="card-body">
+                    <div class="media">
+                        {% if item.photo %}
+                        <img src="{{ item.photo.url }}" alt="" style="border: 2px solid black; display: block;
+margin-left: auto; margin-right: auto; width: 80%; height: 250px">
+                        {% else %}
+        <img src="https://www.pngitem.com/pimgs/m/297-2978988_blogging-and-content-the-transparent-blog-png-png.png" width="150px" style="border: 2px solid black;" alt="">
+                        {% endif %}
+                    </div>
+                    <br>
+                        <h5 class="card-title"> {{ item.title }} </h5>
+                        <p>{{ item.content|linebreaks|truncatewords:30 }}</p>
+                        <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Read More...</a>
+                </div>
 
-  {% endfor %}
-        {% endblock %}
+                <div class="card-footer text-muted">
+                  Publish Date: {{ item.created_at|date:"d-m-Y" }}
+                </div>
+                </div>
+             </div>
+        </div>
+     </div>
 
-<br>
+
+    {% endfor %}
+{% endblock %}
+
+
+

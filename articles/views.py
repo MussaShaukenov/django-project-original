@@ -4,8 +4,6 @@ from django.urls import reverse_lazy
 
 from .forms import ArticlesForm
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
-from bs4 import BeautifulSoup
-import requests
 
 
 class HomeArticles(ListView):
@@ -51,35 +49,9 @@ class CreateArticles(CreateView):
     success_url = reverse_lazy('home')  # get_absolute_url makes it automatically
 
 
-class StatisticsClass(ListView):
-    model = Statistics
-    template_name = 'articles/statistics.html'
-    context_object_name = 'statistics'
+def stats(request):
+    return render(request, 'articles/statistics.html')
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Statistics Page'
-        return context
-
-    def get_queryset(self):
-        return Statistics.objects.filter(city=self.kwargs['city'])
-
-    def scrap_data(self):
-        r = requests.get('https://www.coronavirus2020.kz/')
-        content = r.content
-        soup = BeautifulSoup(content, "lxml")
-        data = []
-        table = soup.find_all('table')[4]
-        rows = table.find_all('tr', attrs={'class': ''})[1:]
-        for row in rows:
-            cols = row.find_all('td')
-            cols = [ele.text.strip() for ele in cols]
-            data.append([ele for ele in cols if ele])  # Get rid of empty values
-        d = []
-        for row in data:
-            d.append([{'city': row[0]}, {'NoI+': row[1]}, {'NoR': row[2]}, {'NoI-': row[4]}])
-
-        return d
 
 
 
