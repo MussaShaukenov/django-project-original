@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    {{ title }} :: {{ block.super }}
-{% endblock %}
-
 <div class="con1">
         <div class="container-fluid">
             <h2>Statistics</h2>
         </div>
     </div>
-{% block stats %} {% endblock %}
+{% block stats %} STATISTICS {% endblock %}
 
 
 {% block sidebar %}
@@ -25,7 +21,7 @@
             <div class="col-md-12">
                  {% for item in articles %}
             </div>
-                <div class="card mb-3" style="border: 2px solid red">
+                <div class="card mb-3">
                 <div class="card-header">
                 <p>Category: <a href="{{ item.category.get_absolute_url }}"> {{ item.category }} </a> </p>
                 </div>

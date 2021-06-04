@@ -30,7 +30,14 @@
 .navbar-brand {
   font-size: 1.6em;
 }
-.con1, #con3, #con5, #con7 {
+.con1 {
+    height: 100px;
+    padding: 10px;
+    color: #000000;
+    text-align: center;
+    font-size: 2em;
+}
+#con3, #con5, #con7 {
     height: 100px;
     background-color: rgba(233, 76, 233, 0.158);
     padding: 10px;

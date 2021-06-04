@@ -42,16 +42,11 @@ class Category(models.Model):
 
 class Statistics(models.Model):
     city = models.CharField(max_length=255)
-    number_of_infected_with_pcr_plus = models.IntegerField(default=0)
-    number_of_infected_with_pcr_minus = models.IntegerField(default=0)
+    number_of_infected = models.IntegerField(default=0)
     number_of_recovered = models.IntegerField(default=0)
     number_of_infected_expected = models.IntegerField(default=0)
     number_of_recovered_expected = models.IntegerField(default=0)
     date = models.DateTimeField(auto_now=True)
-
-    @property
-    def number_of_infected_with_pcr_total(self):
-        return self.number_of_infected_with_pcr_plus + self.number_of_infected_with_pcr_minus
 
     def get_absolute_url(self):
         return reverse('statistics', kwargs={'city': self.pk})

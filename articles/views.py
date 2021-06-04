@@ -49,8 +49,13 @@ class CreateArticles(CreateView):
     success_url = reverse_lazy('home')  # get_absolute_url makes it automatically
 
 
-def stats(request):
-    return render(request, 'articles/statistics.html')
+class HomeStatistics(ListView):
+    model = Statistics
+    template_name = 'articles/statistics.html'
+    context_object_name = 'forecasting'
+
+    def get_queryset(self):
+        return Statistics.objects.filter(date='2021-05-28')
 
 
 

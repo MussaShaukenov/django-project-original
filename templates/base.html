@@ -15,13 +15,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-.d-flex flex-row th, td {
+
+.table td {
    padding: 20px;
    width: 100px;
    text-transform: uppercase;
    font-size: 1.2em;
    cursor: pointer;
+   background-color: whitesmoke;
 }
+
+.table th {
+   padding: 20px;
+   width: 100px;
+   text-transform: uppercase;
+   font-size: 1.2em;
+   cursor: pointer;
+   background-color: whitesmoke;
+}
+
 .navbar-nav a {
    text-transform: uppercase;
    font-size: 1.4em;
@@ -50,14 +62,7 @@
 
     {% include 'inc/_nav.html' %}
 
-
-   <div class="con1">
-        <div class="container-fluid">
-            <h2>Statistics</h2>
-        </div>
-    </div>
-
-    {% block stats %} STATISTICS {% endblock %}
+    {% include 'inc/_statistics.html' %}
 
 
   <div id="con3">
