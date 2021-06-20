@@ -9,3 +9,8 @@ class ArticlesConfig(AppConfig):
 class StatisticsConfig(AppConfig):
     name = 'statistics'
     verbose_name = 'Statistics'
+
+
+
+
+

@@ -18,13 +18,9 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('title',)
 
 
-class StatisticsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'city', 'number_of_infected_with_pcr_plus', 'number_of_infected_with_pcr_minus',
-                    'number_of_infected_with_pcr_total', 'number_of_recovered', 'number_of_infected_expected',
-                    'number_of_recovered_expected', 'date')
-    list_display_links = ('id', 'city')
-    search_fields = ('city', 'id')
-
-
 admin.site.register(Articles, ArticlesAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Statistics)
+
+
+

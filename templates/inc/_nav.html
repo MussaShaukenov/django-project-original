@@ -1,35 +1,56 @@
-<body class="body">
+<div>
+        <div class="header-blue">
+            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                <div class="container"><a class="navbar-brand" href="https://astanait.edu.kz/en/aitu-2/">Astana IT University</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav">
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'home' %}">Main</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#table">Stats</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'articles' %}">Articles</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#safety-rules">Safety</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="#accordion">F.A.Q.</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'subs' %}">Subscription</a></li>
+                              {% if request.user.is_authenticated %}
+        <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'add_articles' %}">Add articles</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">|</a></li>
+                             {% endif %}
+                         {% if request.user.is_authenticated %}
+ <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'home' %}" style="color: coral">Welcome {{ user.username }}</a></li>
+     <li class="nav-item" role="presentation"> <a class="btn btn-light action-button" role="button" href="{% url 'logout' %}">Log Out</a></li>
+                     {% else %}
+                        <span class="navbar-text" style="margin-left: 250px;">
+                        <a href="{% url 'login' %}" class="login">Log In</a>
+                        <a class="btn btn-light action-button" role="button" href="{% url 'register' %}">Sign Up</a>
+                         </span>
+                            {% endif %}
 
-    <header>
-      <div id="top-jumbotron" class="jumbotron text-center">
-        <div class="header">
-          <h1>COVID-19 Forecasting in Kazakhstan</h1>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+                        <h1>COVID-19 Forecasting system in Kazakhstan</h1>
+                        <p> With the website, we want to help and struggle with the spreading of COVID-19.
+                            The website forecasts the upcoming day's situation of infected and recovered people.
+                        </p>
+                        <button class="btn btn-light btn-lg action-button" type="button">
+                            <a href="https://github.com/MussaShaukenov/django-project-original/blob/master/README.md"
+                            style="color: whitesmoke; text-decoration: none">
+                                Learn More
+                            </a>
+                        </button></div>
+                    <div
+                        class="col-md-5 col-lg-5 offset-lg-1 offset-xl-0 d-none d-lg-block phone-holder">
+                        <div class="iphone-mockup">
+                            <img class="device" src="{% include 'inc/iphone.svg' %}">
+                        <div class="screen">
+                    <img src="https://www.solvay.com/sites/g/files/srpend221/files/styles/header/https/media.solvay.com/medias/domain1446/media926/141778-kv28w6qbsf.jpg?itok=uE4zcPA_" alt="">
+                            </div>
+                        </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="{% url 'articles' %}">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="{% url 'forecasting' %}">Statistics</a>
-      <a class="nav-item nav-link" href="{% url 'articles' %}">Articles</a>
-      <a class="nav-item nav-link" href="#con5">Safety First</a>
-      <a class="nav-item nav-link" href="#con7">F.A.Q.</a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#"></a>
-      <a class="nav-item nav-link" href="#">Login</a>
-      <a class="nav-item nav-link" href="#">Sign up</a>
     </div>
-  </div>
-</nav>
+    </div>

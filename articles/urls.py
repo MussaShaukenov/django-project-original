@@ -4,12 +4,20 @@ from .views import *
 
 
 urlpatterns = [
-   path('articles/', HomeArticles.as_view(), name='articles'),
+   path('register/', register, name="register"),
+   path('login/', user_login, name="login"),
+   path('logout/', user_logout, name="logout"),
+   path('', statistiscs, name='statistics'),
+   path('', index, name="home"),
+   path('articles/', listing_articles, name='articles'),
    path('category/<int:category_id>/', ArticlesByCategory.as_view(), name='category'),
    path('articles/<int:pk>', ViewArticles.as_view(), name='view_articles'),
-   path('articles/add_articles', CreateArticles.as_view(), name='add_articles'),
-   path('statistics/', HomeStatistics.as_view(), name="forecasting")
+   path('subs/', subs, name='subs'),
+   path('add_articles/', CreateArticles.as_view(), name='add_articles'),
 ]
+
+
+
 
 
 
